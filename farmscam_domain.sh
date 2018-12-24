@@ -5,8 +5,10 @@ rm -rf domain
 rm -rf *.txt
 echo "pls input domain name,like:sina.com"
 read domain
-cd ./subDomainsBrute&&python subDomainsBrute.py $domain -o ../1$domain.txt 
-cd ../Sublist3r&&python sublist3r.py -d $domain -o ../2$domain.txt
+echo "pls input thread"
+read thread
+cd ./subDomainsBrute&&python subDomainsBrute.py $domain -t $thread -o ../1$domain.txt 
+cd ../Sublist3r&&python sublist3r.py -d $domain -t $thread -o ../2$domain.txt
 cd ../teemo&&python teemo.py -d $domain -o ../../3$domain.txt
 cd ..
 cat 3*.txt |grep @ >>mail

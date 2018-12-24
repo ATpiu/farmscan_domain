@@ -246,7 +246,7 @@ class enumratorBase(object):
                     return self.subdomains
 
             prev_links = links
-            self.should_sleep()
+            #self.should_sleep()
 
         return self.subdomains
 
@@ -894,7 +894,7 @@ def main(domain, threads, savefile, ports, silent, verbose, enable_bruteforce, e
 
     supported_engines = {'baidu': BaiduEnum,
                          'yahoo': YahooEnum,
-                         'google': GoogleEnum,
+                         #'google': GoogleEnum,
                          'bing': BingEnum,
                          'ask': AskEnum,
                          'netcraft': NetcraftEnum,
@@ -909,7 +909,7 @@ def main(domain, threads, savefile, ports, silent, verbose, enable_bruteforce, e
 
     if engines is None:
         chosenEnums = [
-            BaiduEnum, YahooEnum, GoogleEnum, BingEnum, AskEnum,
+            BaiduEnum, YahooEnum, BingEnum, AskEnum,
             NetcraftEnum, DNSdumpster, Virustotal, ThreatCrowd,
             CrtSearch, PassiveDNS
         ]
